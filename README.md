@@ -1,7 +1,7 @@
 # Watch Store Project
 
 ## 📌 Description
-This is a web-based watch store project built using HTML, CSS, JavaScript, and Python (Flask).
+This is a web-based watch store project built using HTML, CSS and Python (Flask).
 
 ## 🚀 Features
 - Product listing
@@ -11,7 +11,6 @@ This is a web-based watch store project built using HTML, CSS, JavaScript, and P
 ## ⚙️ Technologies Used
 - HTML
 - CSS
-- JavaScript
 - Python (Flask)
 
 ## ❗ Note
