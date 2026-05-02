@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="text-align:center; margin-top:50px;">
+<body class="index">
+    <h1 style="font-size:3em; color:#faf7f6;">Welcome to Watch Store</h1>
+    <p style="font-size:1.2em; color:#dfd10d; max-width:600px; margin: 20px auto;">
+        Manage your inventory, sales, and customer data efficiently.  
+        Use the navigation above to get started.
+    </p>
+
+    <div style="margin-top:40px;">
+        <a href="/customers" style="display:inline-block; padding:15px 30px; background-color:#1abc9c; color:white; text-decoration:none; border-radius:8px; margin:10px; font-weight:bold; transition:0.3s;">
+            Customers
+        </a>
+        <a href="/sales" style="display:inline-block; padding:15px 30px; background-color:#e67e22; color:white; text-decoration:none; border-radius:8px; margin:10px; font-weight:bold; transition:0.3s;">
+            Sales
+        </a>
+        <a href="/inventory" style="display:inline-block; padding:15px 30px; background-color:#3498db; color:white; text-decoration:none; border-radius:8px; margin:10px; font-weight:bold; transition:0.3s;">
+            Inventory
+        </a>
+        <a href="/report" style="display:inline-block; padding:15px 30px; background-color:#9b59b6; color:white; text-decoration:none; border-radius:8px; margin:10px; font-weight:bold; transition:0.3s;">
+            Sales Report
+        </a>
+    </div>
+</body>
+</div>
+
+<script>
+    // Add simple hover animation for buttons
+    const buttons = document.querySelectorAll('a');
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseover', () => {
+            btn.style.transform = "scale(1.05)";
+        });
+        btn.addEventListener('mouseout', () => {
+            btn.style.transform = "scale(1)";
+        });
+    });
+</script>
+{% endblock %}

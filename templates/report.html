@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Sales Report</h2>
+
+<form method="POST">
+    <label>From: </label>
+    <input type="date" name="start_date" required>
+    <label>To: </label>
+    <input type="date" name="end_date" required>
+    <button type="submit">Filter</button>
+</form>
+
+<table>
+    <tr>
+        <th>Sale ID</th>
+        <th>Customer</th>
+        <th>Watch</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Date</th>
+    </tr>
+    {% for sale in report %}
+    <tr>
+        <td>{{ sale[0] }}</td>
+        <td>{{ sale[1] }}</td>
+        <td>{{ sale[2] }}</td>
+        <td>{{ sale[3] }}</td>
+        <td>{{ sale[4] }}</td>
+        <td>{{ sale[5] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

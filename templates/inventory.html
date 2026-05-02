@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Inventory</h2>
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Watch Name" required>
+    <input type="number" step="0.01" name="price" placeholder="Price" required>
+    <input type="number" name="quantity" placeholder="Quantity" required>
+    <button type="submit">Add Watch</button>
+</form>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Watch Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    {% for item in inventory %}
+    <tr>
+        <td>{{ item[0] }}</td>
+        <td>{{ item[1] }}</td>
+        <td>{{ item[2] }}</td>
+        <td>{{ item[3] }}</td>
+        <td><a href="/inventory/edit/{{ item[0] }}">Edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

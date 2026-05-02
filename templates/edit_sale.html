@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Sale</h2>
+
+<form method="POST">
+    Customer:
+    <select name="customer_id" required>
+        {% for customer in customers %}
+        <option value="{{ customer[0] }}" {% if customer[0] == sale[1] %}selected{% endif %}>{{ customer[1] }}</option>
+        {% endfor %}
+    </select><br>
+
+    Watch:
+    <select name="watch_id" required>
+        {% for item in inventory %}
+        <option value="{{ item[0] }}" {% if item[0] == sale[2] %}selected{% endif %}>{{ item[1] }}</option>
+        {% endfor %}
+    </select><br>
+
+    Quantity: <input type="number" name="quantity" value="{{ sale[3] }}" min="1" required><br>
+    <input type="submit" value="Update Sale">
+</form>
+{% endblock %}

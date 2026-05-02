@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Sales</h2>
+
+<!-- Add Sale Form -->
+<form method="POST">
+    Customer:
+    <select name="customer_id" required>
+        {% for customer in customers %}
+        <option value="{{ customer[0] }}">{{ customer[1] }}</option>
+        {% endfor %}
+    </select>
+
+    Watch:
+    <select name="watch_id" required>
+        {% for item in inventory %}
+        <option value="{{ item[0] }}">{{ item[1] }}</option>
+        {% endfor %}
+    </select>
+
+    Quantity: <input type="number" name="quantity" min="1" required>
+    <button type="submit">Add Sale</button>
+</form>
+
+<!-- Sales List -->
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Customer</th>
+        <th>Watch</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Date</th>
+        <th>Action</th>
+    </tr>
+    {% for sale in sales %}
+    <tr>
+        <td>{{ sale[0] }}</td>
+        <td>{{ sale[1] }}</td>
+        <td>{{ sale[2] }}</td>
+        <td>{{ sale[3] }}</td>
+        <td>{{ sale[4] }}</td>
+        <td>{{ sale[5] }}</td>
+        <td><a href="/sales/edit/{{ sale[0] }}">Edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

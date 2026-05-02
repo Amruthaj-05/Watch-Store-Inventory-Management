@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 style="color:red;">⚠ Not Enough Stock!</h2>
+
+<p>You requested <b>{{ requested }}</b> units of Watch ID <b>{{ watch_id }}</b>,</p>
+<p>but only <b>{{ available }}</b> units are available in stock.</p>
+
+<a href="/sales"><button>🔙 Go Back to Sales</button></a>
+{% endblock %}
